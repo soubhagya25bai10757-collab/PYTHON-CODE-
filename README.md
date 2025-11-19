@@ -1,4 +1,6 @@
 # PYTHON-CODE-
+
+PROJECT DETAILS 
  This project, Comprehensive Number Theory Implementations, is a Python library consolidating 34 distinct mathematical and number theory functions, developed as a structured assignment across four weeks. It covers a broad spectrum of concepts, ranging from fundamental properties like factorial, palindrome checks, and digital roots, to advanced topics in modular arithmetic (Modular Exponentiation, Chinese Remainder Theorem), primality testing (Miller-Rabin), and classic sequences (Fibonacci, Lucas). Designed for clarity, efficiency, and educational value, this repository serves as a robust reference for number theory algorithms, complete with implementations for finding prime factors, checking perfect powers, and analyzing number types like amicable and highly composite numbers.
 
  **Assignment for Week 2: Fundamentals of Integers and Digit Analysis**
