@@ -1,25 +1,39 @@
 # PYTHON-CODE-
 PROJECT DETAILS 
  
- This project, Comprehensive Number Theory Implementations, is a Python library consolidating 34 distinct mathematical and number theory functions, developed as a structured assignment across four weeks. It covers a broad spectrum of concepts, ranging from fundamental properties like factorial, palindrome checks, and digital roots, to advanced topics in modular arithmetic (Modular Exponentiation, Chinese Remainder Theorem), primality testing (Miller-Rabin), and classic sequences (Fibonacci, Lucas). Designed for clarity, efficiency, and educational value, this repository serves as a robust reference for number theory algorithms, complete with implementations for finding prime factors, checking perfect powers, and analyzing number types like amicable and highly composite numbers.
+This project, Comprehensive Number Theory Implementations, is a Python library consolidating 34 distinct mathematical and number theory functions, developed as a structured assignment across four weeks. It covers a broad spectrum of concepts, ranging from fundamental properties like factorial, palindrome checks, and digital roots, to advanced topics in modular arithmetic (Modular Exponentiation, Chinese Remainder Theorem), primality testing (Miller-Rabin), and classic sequences (Fibonacci, Lucas). Designed for clarity, efficiency, and educational value, this repository serves as a robust reference for number theory algorithms, complete with implementations for finding prime factors, checking perfect powers, and analyzing number types like amicable and highly composite numbers.
 
- **Assignment for Week 2: Fundamentals of Integers and Digit Analysis**
-This week establishes the basic operations necessary for number theory, focusing heavily on digital properties and basic calculation. You'll implement the traditional factorial(n) function and explore how a number behaves when treated as a sequence of characters, as seen in is_palindrome(n) and mean_of_digits(n). The key function here is digital_root(n), which introduces a clever modular arithmetic shortcut to achieve a single-digit result without repeated summation. The goal is to develop fluency in handling integers both as numerical values and as strings for structural analysis.
+QUESTION 2: Palindrome Check (is_palindrome)
+What We Did:- Implemented a function to check if an integer reads the same forwards and backwards (a palindrome).
+What We Learned:- The simplest computational approach is to convert the integer to a string and compare it to its reversed counterpart.
+How Can It Help Others:- Useful for introductory programming exercises, basic data validation, and understanding string manipulation techniques.
 
- **Assignment for Week 3: Divisibility Classification and Prime Factorization**
- Week 3 marks the transition to analyzing a number's structure through its divisors. You will create an efficient internal helper function to find the sum of proper divisors (aliquot sum), which is then used to classify numbers as is_abundant(n) or is_deficient(n). The concept of self-relationship is explored with functions like is_harshad(n) and is_automorphic(n) (where n^2 ends with n). Crucially, this week introduces prime_factors(n), requiring the implementation of efficient trial division up to sqrt{n}. This function serves as the foundation for almost every subsequent week's prime-related analysis.
+QUESTION 9: Pronic Number Check (is_pronic)
+What We Did:- Implemented a check for Pronic numbers (also called oblong numbers), defined as k*(k+1).
+What We Learned:- We learned an efficient shortcut: since a Pronic number n is close to k^2, we only need to check the product of [underoot n] and [underoot n+1].
+How Can It Help Others:- Great for competitive programming challenges and demonstrating how mathematical properties can lead to algorithmic efficiency.
 
- **Assignment for Week 4: Prime and Divisor Counting**
- Building directly on the prime_factors implementation, this week focuses on extracting more complex information from a number's unique prime factorization. Functions like count_distinct_prime_factors(n) and is_prime_power(n) ensure you can quickly assess the composition of a number. You will also implement a generator for twin_primes(limit), which demands an efficient prime-finding method like the Sieve of Eratosthenes. The highlight is count_divisors(n), which requires applying the Fundamental Theorem of Arithmetic—using the exponents from the prime factorization (if n=p_1^{a_1} ..., the count is (a_1+1) ...)—to avoid slow, brute-force checking.
+QUESTION 11: Prime Factor Counting (count_distinct_prime_factors)
+What We Did:- Developed a function to count the number of unique prime factors of an integer n.
+What We Learned:- Algorithmic Efficiency: The core learning here was optimizing the factorization by checking divisors only up to sqrt{n}. If a prime factor greater than sqrt{n} exists, it must be the remaining value of the number after division.
+How Can It Help Others:- Essential building block for cryptography, number theory research, and advanced data structure exercises involving factorization.
 
- **Assignment for Week 5: Divisor Extremes and Modular Exponentiation**
- This week features a mix of intricate divisor analysis and the introduction of a critical cryptographic primitive. You'll complete the divisor classification by  implementing checks for are_amicable(a, b) and the highly computationally intensive is_highly_composite(n), which requires comparing its divisor count against all smaller numbers. However, the most vital deliverable is mod_exp(base, exponent, modulus). This function requires mastering Binary Exponentiation (Exponentiation by Squaring) to calculate b^e mod m in logarithmic time, setting the stage for all advanced modular arithmetic in Week 6 and probabilistic primality testing in Week 8.
+QUESTION 19: Highly Composite Check (is_highly_composite)
+What We Did:- Implemented a function to determine if a number has strictly more divisors than any smaller positive integer.
+What We Learned:- Computational Cost: This function highlighted the trade-off between conceptual simplicity and performance. Verifying this property requires iteratively calculating the total divisor count for every number i from 1 to n-1, making it computationally intensive for large n.
+How Can It Help Others:- Useful for illustrating computational complexity and concepts related to divisor functions in mathematics courses.
 
-** Assignment for Week 6: Modular Arithmetic and Congruence**
-This is the cryptographic core of the project. You must implement the Extended Euclidean Algorithm to obtain the necessary cofactors for mod_inverse(a, m), which finds the multiplicative inverse x such that ax = 1 mod m. This inverse is then a critical component in solving systems of congruences using the Chinese Remainder Theorem (crt(remainders, moduli)). The week also includes higher-level checks like is_quadratic_residue(a, p), which relies on Euler's Criterion (using mod_exp), and order_mod(a, n) to find the smallest exponent k for which a^k = 1 mod n.
+QUESTION 25: Fibonacci Prime Check (is_fibonacci_prime)
+What We Did:- Created a composite check that verifies if a number is both prime and a Fibonacci number.
+What We Learned:- Mathematical Identities: We utilized the highly efficient mathematical identity for Fibonacci numbers: n is Fibonacci if 5n^2 + 4 or 5n^2 - 4$ is a perfect square. This avoids slow sequence generation.
+How Can It Help Others:- Excellent example of applying advanced mathematical theorems to create highly efficient boolean checks in programming.
 
-**Assignment for Week 7: Sequences, Power Forms, and Pseudoprimes**
-This assignment focuses on specific sequence generation and number classification outside the realm of prime factorization. You will generate the Lucas sequence (similar to Fibonacci but starting with 2, 1) and implement a robust check for is_perfect_power(n) (testing roots against possible exponents). The most interesting functions explore the boundaries of number theory: collatz_length(n) (simulating the iterative Collatz Conjecture) and is_carmichael(n). The Carmichael number check is essential for understanding pseudoprimes—composite numbers that pass the simple Fermat primality test—requiring checks for compositeness, square-freeness, and the (p-1) mid (n-1) property.
+QUESTION 26: Lucas Number Generator (lucas_sequence)
+What We Did:- Implemented a generator for the first n Lucas numbers, a sequence that shares the Fibonacci recurrence but starts with L0=2 and L1=1.
+What We Learned:- We learned how sequences are generated iteratively, using the previous two terms to calculate the next. This is a fundamental pattern for dynamic programming and recurrence relations.
+How Can It Help Others:- Applicable in modeling natural growth patterns, studying mathematical sequences, and demonstrating recursive thinking without explicit recursion.
 
-**Assignment for Week 8: Advanced Algorithms and Analytic Concepts**
-The final week tackles the most sophisticated algorithms and touches on analytic number theory. You must implement the probabilistic Miller-Rabin primality test (is_prime_miller_rabin(n, k)), which is the standard for modern cryptographic prime generation, relying heavily on modular exponentiation and the structure of $n-1$. For factorization, you implement Pollard's Rho algorithm (pollard_rho(n)), using Floyd's cycle-finding (tortoise and hare) technique to efficiently locate non-trivial factors. Finally, you move to continuous mathematics by approximating the Riemann Zeta function zeta(s) via series summation, and to combinatorics by calculating the Partition function p(n) using Dynamic Programming based on Euler's Pentagonal Number Theorem.
+QUESTION 33: Riemann Zeta Approximation (zeta_approx)
+What We Did:- Created an approximator for the Riemann zeta function zeta(s) = sum{k=1}^{infty} {1}{k^s} using a limited number of terms.
+What We Learned:- Approximating Infinite Series: This showed the practical side of numerical analysis. We learned that for convergent series (s > 1), a finite number of terms can provide a reasonable, fast approximation, and also the importance of handling non-convergent cases.
+How Can It Help Others:- A foundational tool for students and researchers in numerical methods, calculus, and advanced mathematics.
